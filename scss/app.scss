@@ -1,0 +1,220 @@
+@import 'screen_size';
+
+//Rid html and body of its initial padding and margins. 
+html,body{
+    margin: 0;
+    padding:0;
+}
+
+//Give html a background of a old vintage paper. Fix it to the back in order to fill the page.
+html{    
+    background: url(../images/background.jpg) center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+body{
+    font-family: 'IM Fell English', serif;
+}
+
+header{
+    width:96%;
+    margin:0 auto;
+}
+
+h1{
+    text-align:center;
+    -ms-transform: scaleY(2); /* IE 9 */
+    transform: scaleY(2);
+    @include screenSize(small){
+        margin:.5em auto;
+    }
+    @include screenSize(medium){
+        margin:1.5em auto;
+    }
+    @include screenSize(large){
+        margin:2em auto;
+    }
+}
+
+h1 a{
+    color:black;
+    text-decoration: none;
+    font-family: 'Sonsie One', cursive;
+    font-size: 4.5vw;
+    letter-spacing:.1em;
+}
+
+h2{
+    font-family: 'Anton', sans-serif; 
+    font-size: 3em;
+    letter-spacing:.2em;
+    @include screenSize(small){
+        text-align:center;
+    }
+}
+
+//create a divider to seperate content
+header hr.simple-divide{
+    width: 100%;
+    @include screenSize(small){
+        border: 2px solid black;
+    }
+    @include screenSize(medium){
+        border: 3px solid black;
+    }
+    @include screenSize(large){
+        border: 3px solid black;
+    }
+}
+
+//Start of  publishing information styles. 
+
+/**Styles the container for the publishing information of the article. 
+Puts three sets of content side by side in three equal columns
+**/
+
+div.publication-ctn{
+    font-family: 'Roboto', sans-serif;
+    margin:.5em auto;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @include screenSize(small){
+        font-size: 1em;
+    }
+    @include screenSize(medium){
+        font-size: 1.5em;
+    }
+    @include screenSize(large){
+        font-size: 2em;
+    }
+}
+
+div.publication-info{
+    float: left;
+    width: 33.33%;
+    &:nth-child(1) {
+        text-align: left;
+    }
+    &:nth-child(2) {
+        text-align: center;
+    }
+    &:nth-child(3) {
+        text-align: right;
+    }
+}
+
+//End of publishing information styles.
+
+main{
+    width:96%;
+    margin:0 auto;
+}
+
+//Start of aside and elements in aside styles 
+aside{
+    @include screenSize(small){
+        float:none;
+        width:100%;
+    }
+    @include screenSize(medium){
+        float:right;
+        width:100%;
+    }
+    @include screenSize(large){
+        float:right;
+        width:40%;
+    }
+}
+
+aside img{
+    @include screenSize(small){
+        width:100%;
+    }
+    @include screenSize(medium){
+        width:100%;
+    }
+    @include screenSize(large){
+        width:100%;
+    }
+}
+
+//End of aside and elements in aside styles 
+
+//Start of section and elements in section styles
+
+section{
+    @include screenSize(small){
+        float:none;
+        width:100%;
+    }
+    @include screenSize(medium){
+        float:left;
+        width:100%;
+    }
+    @include screenSize(large){
+        float:left;
+        width:60%;
+    }
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 1.6em;
+}
+
+section hr.simple-divide{
+    width:70%;
+    @include screenSize(small){
+        border: 1px solid black;
+    }
+    @include screenSize(medium){
+        border: 2px solid black;
+    }
+    @include screenSize(large){
+        border: 2px solid black;
+    }
+}
+
+article{
+    margin: 0 auto;
+    @include screenSize(small){
+        column-count:1;
+        width:100%;
+    }
+    @include screenSize(medium){
+        column-count:2;
+        width:98%;
+    }
+    @include screenSize(large){
+        column-count:3;
+        width:98%;
+    }
+}
+
+/**Styles the first letter in the article in a newspaper-like fashion - first letter larger
+than the rest of the paragraph. 
+**/
+
+.first-paragraph{
+    &:first-letter{
+        float: left;
+        font-size: 5em;
+        line-height: 60px;
+        padding: 6px 7px 3px 0px;
+    }
+}
+
+//End of section and elements in section styles
+
+footer{
+    width:96%;
+    margin: 0 auto;
+}
